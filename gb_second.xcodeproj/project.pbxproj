@@ -140,12 +140,12 @@
 		A55B25A82594A27400676326 /* gb_second */ = {
 			isa = PBXGroup;
 			children = (
+				A5E20D3F259F808D000C74E5 /* Main */,
 				A5087E3C259A8670005D391A /* Login */,
 				A5087E2A259A7E26005D391A /* Friends */,
 				A5087E29259A7DF7005D391A /* Groups */,
 				A55B25A92594A27400676326 /* AppDelegate.swift */,
 				A55B25AB2594A27400676326 /* SceneDelegate.swift */,
-				A5087E2C259A8005005D391A /* Main.storyboard */,
 				A55B25B22594A27700676326 /* Assets.xcassets */,
 				A55B25B42594A27700676326 /* LaunchScreen.storyboard */,
 				A55B25B72594A27700676326 /* Info.plist */,
@@ -159,6 +159,14 @@
 				A58CA164259B41F6006C5723 /* UserFriendsCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		A5E20D3F259F808D000C74E5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A5087E2C259A8005005D391A /* Main.storyboard */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
