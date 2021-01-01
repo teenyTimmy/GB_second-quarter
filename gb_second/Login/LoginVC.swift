@@ -7,8 +7,10 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var loginTextfield: UITextField!
+    @IBOutlet weak var passwordTextfield: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,17 @@ class LoginVC: UIViewController {
         )
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        let result = checkUserCredentials()
+        
+        if !result {
+            showAlert()
+            return result
+        }
+        
+        return result
+    }
+    
     func addTapGestureToHideKeyboard() {
         let tapGesture = UITapGestureRecognizer(target: view, action: #selector(view.endEditing))
         view.addGestureRecognizer(tapGesture)
@@ -40,10 +53,24 @@ class LoginVC: UIViewController {
         let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.size.height, right: 0)
         scrollView.contentInset = insets
     }
-
+    
     @objc func keyboardWillHide(notification: Notification) {
         scrollView.contentInset = UIEdgeInsets.zero
     }
+    
+    func checkUserCredentials() -> Bool {
+        return loginTextfield.text! == "admin" && passwordTextfield.text == "123"
+    }
+    
+    func showAlert() {
+        let alert = UIAlertController(
+            title: "Error",
+            message: "Username or Password has incorrect",
+            preferredStyle: .alert
+        )
+        let alertAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
+    }
 }
-
- 
