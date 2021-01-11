@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -34,11 +33,14 @@
                                                     </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ks7-l0-SwG">
                                                         <rect key="frame" x="0.0" y="57.5" width="290" height="34"/>
+                                                        <color key="backgroundColor" red="0.36470588235294116" green="0.59999999999999998" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3WM-Wl-ZSk">
                                                         <rect key="frame" x="0.0" y="111.5" width="290" height="34"/>
+                                                        <color key="backgroundColor" red="0.36470588240000001" green="0.59999999999999998" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                                                     </textField>
@@ -56,7 +58,6 @@
                                                 </constraints>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="Smr-dG-Xey" secondAttribute="bottom" constant="20" id="F5a-wB-yA0"/>
                                             <constraint firstItem="Smr-dG-Xey" firstAttribute="centerX" secondItem="d7z-9z-Edr" secondAttribute="centerXWithinMargins" id="K6k-fn-q5M"/>
@@ -75,7 +76,7 @@
                             </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.27058823529411763" green="0.50588235294117645" blue="0.76078431372549016" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fUB-d9-t9q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EKp-yA-8Le"/>
                             <constraint firstItem="fUB-d9-t9q" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GFB-6n-lBK"/>
@@ -106,9 +107,4 @@
             <point key="canvasLocation" x="682" y="137"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

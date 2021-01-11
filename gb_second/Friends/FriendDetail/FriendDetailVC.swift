@@ -10,6 +10,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class FriendDetailVC: UICollectionViewController {
+    
+    var imageName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +31,11 @@ class FriendDetailVC: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Collection", for: indexPath) as? FriendDetailCollection else { return UICollectionViewCell()}
     
-        // Configure the cell
-    
+        cell.userImageDetail.image = UIImage(named: imageName!)
+        cell.userImageDetail.clipsToBounds = true
+        
         return cell
     }
 

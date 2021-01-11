@@ -9,16 +9,10 @@ import UIKit
 
 class UserFriendsVC: UITableViewController {
     
-    let mockFriends: [String] = ["Dom", "Alan", "Tim", "Alex", "Odri"]
+    let mockFriends: [String] = ["Dom", "Paul", "HAN", "Tej", "Letti"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -35,8 +29,22 @@ class UserFriendsVC: UITableViewController {
        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as? UserFriendsCell else { return UITableViewCell() }
 
-        cell.cellLabel.text = mockFriends[indexPath.row]
+        cell.userName.text = mockFriends[indexPath.row]
+        cell.userImage.image = UIImage(named: mockFriends[indexPath.row])
+        cell.userImage.layer.cornerRadius = cell.userImage.frame.size.height / 2
+        cell.userImage.clipsToBounds = true
+        
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "userDetail",
+              let destination = segue.destination as? FriendDetailVC else { return }
+        
+        guard let tableViewController = segue.source as? Self,
+              let indexPath = tableViewController.tableView.indexPathForSelectedRow else { return }
+        
+        destination.imageName = tableViewController.mockFriends[indexPath.row]
     }
 
 }

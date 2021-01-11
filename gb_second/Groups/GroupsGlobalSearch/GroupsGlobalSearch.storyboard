@@ -21,13 +21,41 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="rok-sL-wKX">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="rok-sL-wKX" customClass="GlobalGroupCell" customModule="gb_second" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="85.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rok-sL-wKX" id="R46-4v-aq4">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="85.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uor-N7-zls">
+                                                    <rect key="frame" x="20" y="10" width="65" height="65.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="65" id="Zwn-1H-Tud"/>
+                                                        <constraint firstAttribute="width" constant="65" id="gFu-46-KaD"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alp-0d-Wuv">
+                                                    <rect key="frame" x="105" y="10" width="289" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uor-N7-zls" firstAttribute="top" secondItem="R46-4v-aq4" secondAttribute="top" constant="10" id="29b-pd-6pY"/>
+                                                <constraint firstAttribute="bottom" secondItem="uor-N7-zls" secondAttribute="bottom" constant="10" id="Jev-cS-Yz4"/>
+                                                <constraint firstItem="uor-N7-zls" firstAttribute="leading" secondItem="R46-4v-aq4" secondAttribute="leading" constant="20" id="O7E-E5-tM3"/>
+                                                <constraint firstAttribute="trailing" secondItem="alp-0d-Wuv" secondAttribute="trailing" constant="20" id="Xf4-b1-KDK"/>
+                                                <constraint firstItem="alp-0d-Wuv" firstAttribute="top" secondItem="R46-4v-aq4" secondAttribute="top" constant="10" id="j70-sA-YSb"/>
+                                                <constraint firstItem="alp-0d-Wuv" firstAttribute="leading" secondItem="uor-N7-zls" secondAttribute="trailing" constant="20" id="onq-ZT-hrl"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="groupImage" destination="uor-N7-zls" id="h3d-Aw-4dx"/>
+                                            <outlet property="groupName" destination="alp-0d-Wuv" id="zqK-O9-76M"/>
+                                            <segue destination="msH-9L-93P" kind="unwind" unwindAction="unwindFromGroupsGlobalSearchVC:" id="c7f-fj-vre"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -41,8 +69,12 @@
                             <constraint firstItem="zuL-9D-1tm" firstAttribute="trailing" secondItem="ld6-Eb-ns5" secondAttribute="trailing" id="f9y-a4-1xt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="zuL-9D-1tm" id="Yj4-wf-HrZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4x4-sh-CYj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="msH-9L-93P" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4442" y="564"/>
         </scene>

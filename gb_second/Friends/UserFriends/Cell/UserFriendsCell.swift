@@ -9,6 +9,7 @@ import UIKit
 
 class UserFriendsCell: UITableViewCell {
     
-    @IBOutlet weak var cellLabel: UILabel!
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
     
 }

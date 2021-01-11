@@ -30,6 +30,8 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
             name: UIResponder.keyboardWillHideNotification,
             object: nil
         )
+        
+        
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
