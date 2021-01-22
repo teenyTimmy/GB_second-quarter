@@ -8,8 +8,5 @@
 import UIKit
 
 class UserFriendsCell: UITableViewCell {
-    
-    @IBOutlet weak var userName: UILabel!
-    @IBOutlet weak var userImage: UIImageView!
-    
+    @IBOutlet weak var viewCell: UIView!
 }
