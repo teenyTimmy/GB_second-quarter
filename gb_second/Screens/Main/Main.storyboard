@@ -21,7 +21,7 @@
         <scene sceneID="DOW-jn-yjn">
             <objects>
                 <navigationController navigationBarHidden="YES" id="nLS-4s-crG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="menubar.rectangle" selectedImage="menubar.rectangle" catalog="system" id="ld9-DW-yuh"/>
+                    <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" selectedImage="newspaper" id="ld9-DW-yuh"/>
                     <navigationItem key="navigationItem" id="UJW-b6-sEH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ywf-vV-zf7">
                         <autoresizingMask key="autoresizingMask"/>
@@ -118,8 +118,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="menubar.rectangle" catalog="system" width="128" height="93"/>
-        <image name="menubar.rectangle" width="128" height="128"/>
+        <image name="newspaper" catalog="system" width="128" height="108"/>
         <image name="person.2.fill" catalog="system" width="128" height="80"/>
         <image name="rectangle.stack.fill" catalog="system" width="128" height="122"/>
     </resources>

@@ -26,12 +26,11 @@ class UserFriendsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBAction func didMakePan(_ sender: UIPanGestureRecognizer) {
         let location = sender.location(in: characterPicker)
         let cf = Int(characterPicker.frame.height) / tableSections.count
-        let letterIndex = Int(location.y) / cf
+        let letterIndex = Int(location.y) / cf        
         
         if letterIndex < tableSections.count && letterIndex >= 0 {
             characterPicker.selectedChar = tableSections[letterIndex]
         }
-        
     }
     
     private let mockFriends: [String] = [

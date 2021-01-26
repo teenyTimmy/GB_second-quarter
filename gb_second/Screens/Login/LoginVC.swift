@@ -8,6 +8,7 @@
 import UIKit
 
 class LoginVC: UIViewController, UIScrollViewDelegate {
+    @IBOutlet var containerView: UIView!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var loginTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
@@ -20,26 +21,26 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
         super.viewDidLoad()
         
         addTapGestureToHideKeyboard()
-        
+
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillShow(notification:)),
             name: UIResponder.keyboardWillShowNotification,
             object: nil
         )
-        
+
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(keyboardWillHide(notification:)),
             name: UIResponder.keyboardWillHideNotification,
             object: nil
         )
-        
+
         gradientLayer.colors = [easyGreen.cgColor, darkGreen.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.6, y: 0.4)
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.8)
         gradientLayer.frame = view.bounds
-        
+
         view.layer.insertSublayer(gradientLayer, at: 0)
     }
     

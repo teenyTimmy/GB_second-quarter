@@ -11,7 +11,7 @@
         <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="gb_second" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginVC" customModule="gb_second" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,6 +89,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="containerView" destination="8bC-Xf-vdC" id="ot3-o4-JLP"/>
                         <outlet property="loginTextfield" destination="ks7-l0-SwG" id="b1X-If-tSd"/>
                         <outlet property="passwordTextfield" destination="3WM-Wl-ZSk" id="ljb-O4-W0T"/>
                         <outlet property="scrollView" destination="fUB-d9-t9q" id="7YY-DS-UMX"/>

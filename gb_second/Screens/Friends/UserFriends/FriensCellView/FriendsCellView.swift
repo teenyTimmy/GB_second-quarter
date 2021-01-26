@@ -11,6 +11,15 @@ class FriendsCellView: UIView {
     @IBOutlet var mainViewContainer: UIView!
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var imageView: UIView!
+    
+    @IBAction func taped(_ sender: UITapGestureRecognizer) {
+        self.imageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: []) {
+            self.imageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
