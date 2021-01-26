@@ -25,7 +25,7 @@ class GroupsGlobalSearchVC: UIViewController, UITableViewDelegate, UITableViewDa
         
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.hidesSearchBarWhenScrolling = true
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

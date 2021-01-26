@@ -17,15 +17,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="122" id="KKX-GF-Tze" customClass="UserGroupCell" customModule="gb_second" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="122"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="93" id="KKX-GF-Tze" customClass="UserGroupCell" customModule="gb_second" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KKX-GF-Tze" id="gjr-X3-37g">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3wz-Yb-wup">
-                                            <rect key="frame" x="20" y="10" width="65" height="102"/>
+                                            <rect key="frame" x="20" y="10" width="65" height="73"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="65" id="MSj-4b-g5R"/>
                                                 <constraint firstAttribute="height" constant="65" id="Oci-4w-2Dc"/>
@@ -71,7 +71,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYn-MS-gyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2963.768115942029" y="577.90178571428567"/>
+            <point key="canvasLocation" x="2962.3188405797105" y="577.90178571428567"/>
         </scene>
         <!--GroupsGlobalSearch-->
         <scene sceneID="UZq-3o-Cep">
