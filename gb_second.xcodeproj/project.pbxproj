@@ -25,6 +25,8 @@
 		A55B25B12594A27400676326 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55B25AF2594A27400676326 /* Login.storyboard */; };
 		A55B25B32594A27700676326 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A55B25B22594A27700676326 /* Assets.xcassets */; };
 		A55B25B62594A27700676326 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A55B25B42594A27700676326 /* LaunchScreen.storyboard */; };
+		A58BD93125BF4D300000B32B /* SplashScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58BD93025BF4D300000B32B /* SplashScreenVC.swift */; };
+		A58BD93525BF4D470000B32B /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A58BD93425BF4D470000B32B /* SplashScreen.storyboard */; };
 		A58CA165259B41F6006C5723 /* UserFriendsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A58CA164259B41F6006C5723 /* UserFriendsCell.swift */; };
 		A591A33C25AF899B00E9C8C9 /* HEXColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591A33B25AF899B00E9C8C9 /* HEXColorExtension.swift */; };
 		A591A34125B0AC1800E9C8C9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A591A34025B0AC1800E9C8C9 /* CustomTextField.swift */; };
@@ -67,6 +69,8 @@
 		A55B25B22594A27700676326 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A55B25B52594A27700676326 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A55B25B72594A27700676326 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A58BD93025BF4D300000B32B /* SplashScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenVC.swift; sourceTree = "<group>"; };
+		A58BD93425BF4D470000B32B /* SplashScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashScreen.storyboard; sourceTree = "<group>"; };
 		A58CA164259B41F6006C5723 /* UserFriendsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFriendsCell.swift; sourceTree = "<group>"; };
 		A591A33B25AF899B00E9C8C9 /* HEXColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HEXColorExtension.swift; sourceTree = "<group>"; };
 		A591A34025B0AC1800E9C8C9 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 		A52FD90A25AF59290052F9C6 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
+				A58BD92F25BF4CE70000B32B /* Splash */,
 				A55B25B42594A27700676326 /* LaunchScreen.storyboard */,
 			);
 			path = Launch;
@@ -253,6 +258,15 @@
 				A55B25B72594A27700676326 /* Info.plist */,
 			);
 			path = gb_second;
+			sourceTree = "<group>";
+		};
+		A58BD92F25BF4CE70000B32B /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A58BD93025BF4D300000B32B /* SplashScreenVC.swift */,
+				A58BD93425BF4D470000B32B /* SplashScreen.storyboard */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		A58CA163259B41AE006C5723 /* Cell */ = {
@@ -427,6 +441,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5087E27259A7DBA005D391A /* UserGroups.storyboard in Resources */,
+				A58BD93525BF4D470000B32B /* SplashScreen.storyboard in Resources */,
 				A5087E24259A7DA9005D391A /* UserFriends.storyboard in Resources */,
 				A5EBD84F25B631F800DE7E2C /* NewsCellView.xib in Resources */,
 				A55B25B62594A27700676326 /* LaunchScreen.storyboard in Resources */,
@@ -450,6 +465,7 @@
 				A523CCA425AC972300A81336 /* UserModel.swift in Sources */,
 				A5EBD83725B2D63E00DE7E2C /* CharacterPicker.swift in Sources */,
 				A523CCA925AC974D00A81336 /* GroupModel.swift in Sources */,
+				A58BD93125BF4D300000B32B /* SplashScreenVC.swift in Sources */,
 				A5EBD83E25B477F800DE7E2C /* ShadowImageView.swift in Sources */,
 				A55B25AE2594A27400676326 /* LoginVC.swift in Sources */,
 				A5087E18259A7B9E005D391A /* UserGroupsVC.swift in Sources */,

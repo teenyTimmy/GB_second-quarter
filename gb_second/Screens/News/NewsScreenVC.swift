@@ -88,7 +88,7 @@ class NewsScreenVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         let imageView: UIImageView = UIImageView()
         
         imageView.frame = newsView.bodyViewContainer.bounds
-        imageView.image = UIImage(named: "Fast 5")
+        imageView.image = UIImage(named: "Fast \(indexPath.section + 1)")
         imageView.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleRightMargin, .flexibleLeftMargin, .flexibleTopMargin]
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
@@ -102,7 +102,7 @@ class NewsScreenVC: UIViewController, UITableViewDelegate, UITableViewDataSource
         newsView.bodyViewContainer.addSubview(imageView)
 
         cell.viewCell.addSubview(newsView)
-
+        
         return cell
     }
 

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendsCellView" customModule="gb_second" customModuleProvider="target">
             <connections>
+                <outlet property="ImageView" destination="6tx-Jh-DwH" id="We4-Vg-6Mi"/>
                 <outlet property="mainViewContainer" destination="GZI-Fb-gFk" id="Gfh-X2-4G9"/>
                 <outlet property="userImage" destination="GL3-hQ-8r5" id="H6V-fq-00m"/>
                 <outlet property="userName" destination="yQY-bT-Gra" id="iOK-38-GNW"/>
@@ -29,17 +30,24 @@
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GL3-hQ-8r5" customClass="RoundedImage" customModule="gb_second" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="65" height="65"/>
+                                    <gestureRecognizers/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <gestureRecognizers/>
                             <constraints>
-                                <constraint firstItem="GL3-hQ-8r5" firstAttribute="leading" secondItem="6tx-Jh-DwH" secondAttribute="leading" id="7ma-eI-Up8"/>
-                                <constraint firstAttribute="bottom" secondItem="GL3-hQ-8r5" secondAttribute="bottom" id="a1b-Uf-srN"/>
+                                <constraint firstItem="GL3-hQ-8r5" firstAttribute="leading" secondItem="6tx-Jh-DwH" secondAttribute="leading" id="EzC-7m-buZ"/>
+                                <constraint firstAttribute="trailing" secondItem="GL3-hQ-8r5" secondAttribute="trailing" id="TQh-s3-eW2"/>
+                                <constraint firstItem="GL3-hQ-8r5" firstAttribute="height" secondItem="6tx-Jh-DwH" secondAttribute="height" id="UJm-Mk-xAU"/>
+                                <constraint firstItem="GL3-hQ-8r5" firstAttribute="width" secondItem="6tx-Jh-DwH" secondAttribute="width" id="YGw-gn-x8O"/>
                                 <constraint firstAttribute="width" constant="65" id="aVM-xL-MKD"/>
-                                <constraint firstAttribute="trailing" secondItem="GL3-hQ-8r5" secondAttribute="trailing" id="jux-JK-AZP"/>
-                                <constraint firstItem="GL3-hQ-8r5" firstAttribute="top" secondItem="6tx-Jh-DwH" secondAttribute="top" id="lcb-XA-pjt"/>
+                                <constraint firstAttribute="bottom" secondItem="GL3-hQ-8r5" secondAttribute="bottom" id="hIT-WF-bHW"/>
+                                <constraint firstItem="GL3-hQ-8r5" firstAttribute="top" secondItem="6tx-Jh-DwH" secondAttribute="top" id="oX2-AI-cbD"/>
                                 <constraint firstAttribute="width" secondItem="6tx-Jh-DwH" secondAttribute="height" multiplier="1:1" id="twF-1l-aNM"/>
                             </constraints>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="aij-eL-tmb" appends="YES" id="He9-7T-bgW"/>
+                            </connections>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQY-bT-Gra">
                             <rect key="frame" x="85" y="30.5" width="720" height="19.5"/>
@@ -90,6 +98,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="503.62318840579712" y="-340.84821428571428"/>
         </view>
+        <tapGestureRecognizer id="aij-eL-tmb">
+            <connections>
+                <action selector="taped:" destination="-1" id="Exh-Gt-KHp"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <systemColor name="systemBackgroundColor">

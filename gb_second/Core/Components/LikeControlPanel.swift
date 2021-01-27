@@ -11,6 +11,7 @@ class LikeControlPanel: UIControl {
     private var stackView: UIStackView!
     private let button = UIButton(type: .system)
     var counterLabel = UILabel()
+    var counter: Int = 0
     
     var isLiked: Bool = false {
         didSet {
@@ -23,7 +24,6 @@ class LikeControlPanel: UIControl {
             self.updateControl()
         }
     }
-    var counter: Int = 0
     
     override init(frame: CGRect) {
          super.init(frame: frame)
@@ -60,8 +60,17 @@ class LikeControlPanel: UIControl {
     
     private func updateControl() {
         button.setImage(UIImage(systemName: isLiked ? "heart.fill" : "heart"), for: .normal)
-        button.tintColor = isLiked ? .systemPink : .black
-        counterLabel.textColor = isLiked ? .systemPink : .black
+        
+        self.button.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        self.counterLabel.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
+        
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.2, initialSpringVelocity: 0, options: []) {
+            self.button.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.counterLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+            self.button.tintColor = self.isLiked ? .systemPink : .black
+            self.counterLabel.textColor = self.isLiked ? .systemPink : .black
+        }
+        
         counterLabel.text = String(counter)
     }
     
