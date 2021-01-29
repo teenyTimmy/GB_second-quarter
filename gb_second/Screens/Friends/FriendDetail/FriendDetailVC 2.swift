@@ -10,7 +10,8 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class FriendDetailVC: UICollectionViewController {
-    var images: [String]?
+    
+    var imageName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,18 +26,14 @@ class FriendDetailVC: UICollectionViewController {
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard let images = images else { return 1 }
-    
-        return images.count
+        // #warning Incomplete implementation, return the number of items
+        return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Collection", for: indexPath) as? FriendDetailCollection else { return UICollectionViewCell()}
-        
-        
-        
     
-        cell.userImageDetail.image = UIImage(named: images![indexPath.row])
+        cell.userImageDetail.image = UIImage(named: imageName!)
         cell.userImageDetail.clipsToBounds = true
         
         return cell

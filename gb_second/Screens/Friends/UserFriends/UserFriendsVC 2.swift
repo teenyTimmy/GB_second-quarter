@@ -26,25 +26,26 @@ class UserFriendsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     @IBAction func didMakePan(_ sender: UIPanGestureRecognizer) {
         let location = sender.location(in: characterPicker)
         let cf = Int(characterPicker.frame.height) / tableSections.count
-        let letterIndex = Int(location.y) / cf        
+        let letterIndex = Int(location.y) / cf
         
         if letterIndex < tableSections.count && letterIndex >= 0 {
             characterPicker.selectedChar = tableSections[letterIndex]
         }
+        
     }
     
-    private let friends: Array<[String: Any]> = [
-        ["name": "Dom", "images": ["Dom", "HAN", "Fast 3", "Fast 5"]],
-        ["name": "Paul", "images": ["Paul", "HAN", "Fast 1", "Fast 2", "Fast 5", "Fast 4"]],
-        ["name": "HAN", "images": ["Han", "HAN", "Fast 3", "Fast 5", "Fast 4"]],
-        ["name": "Tej", "images": ["Tej", "HAN", "Fast 3", "Fast 5", "Fast 1", "Fast 2"]],
-        ["name": "Letti", "images": ["Letti", "HAN", "Fast 3", "Fast 5"]],
-        ["name": "Ron", "images": ["Ron", "HAN", "Fast 3", "Fast 5"]],
-        ["name": "Ramzey", "images": ["Dom", "HAN", "Fast 3", "Fast 5"]],
-        ["name": "Mia", "images": ["Dom", "HAN", "Fast 3", "Fast 5"]],
-        ["name": "Adwin", "images": ["Dom", "HAN", "Fast 3", "Fast 5"]],
-        ["name": "Johny", "images": ["Dom", "HAN", "Fast 3", "Fast 5"]],
-        ["name": "Tago", "images": ["Dom", "HAN", "Fast 3", "Fast 5"]],
+    private let mockFriends: [String] = [
+        "Dom",
+        "Paul",
+        "HAN",
+        "Tej",
+        "Letti",
+        "Ron",
+        "Ramzey",
+        "Mia",
+        "Adwin",
+        "Johny",
+        "Tago",
     ]
     
     private let searchController: UISearchController! = UISearchController(searchResultsController: nil)
@@ -75,7 +76,7 @@ class UserFriendsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = true
         
-        createSectionsHandler()
+        createSectionsHandler(mockFriends)
         
         characterPicker.Chars = tableSections
         characterPicker.setupUI()        
@@ -88,19 +89,14 @@ class UserFriendsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         guard let tableViewController = segue.source as? Self,
               let indexPath = tableViewController.tableView.indexPathForSelectedRow else { return }
         
-        var tempArr: Array<[String]> = [[String]]()
-        
-        friends.forEach {
-            let name = "\($0["name"]!)"
-            let char = name.prefix(1)
-            let images = $0["images"] as! [String]
-            
-            if char == tableSections[indexPath.section] {
-                tempArr.append(images)
+        var tempArr = [String]()
+        for user in mockFriends {
+            if user.prefix(1) == tableSections[indexPath.section] {
+                tempArr.append(user)
             }
         }
         
-        destination.images = tempArr[indexPath.row]
+        destination.imageName = tempArr[indexPath.row]
     }
 
     // MARK: - Table view data source
@@ -129,14 +125,10 @@ class UserFriendsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             return filteredResults.count
         }
         
-        var tempArr: [String] = [String]()
-        
-        friends.forEach {
-            let name = "\($0["name"]!)"
-            let char = String(name.prefix(1))
-            
-            if char == tableSections[section]  {
-                tempArr.append(name)
+        var tempArr = [String]()
+        for user in mockFriends {
+            if user.prefix(1) == tableSections[section] {
+                tempArr.append(user)
             }
         }
         
@@ -152,18 +144,14 @@ class UserFriendsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
             cellView.userName.text = filteredResults[indexPath.row]
             cellView.userImage.image = getUserImage(named: filteredResults[indexPath.row])
         } else {
-            var tempArr: [String] = [String]()
-            
-            friends.forEach {
-                let name = "\($0["name"]!)"
-                let char = name.prefix(1)
-                
-                if char == tableSections[indexPath.section] {
-                    tempArr.append(name)
+            var tempArr = [String]()
+            for user in mockFriends {
+                if user.prefix(1) == tableSections[indexPath.section] {
+                    tempArr.append(user)
                 }
             }
             
-            cellView.userName.text = String(tempArr[indexPath.row])
+            cellView.userName.text = tempArr[indexPath.row]
             cellView.userImage.image = getUserImage(named: tempArr[indexPath.row])
         }
         
@@ -182,16 +170,12 @@ class UserFriendsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
         return image
     }
     
-    func createSectionsHandler() -> Void {
-        friends.forEach {
-            let name = "\($0["name"]!)"
-            let char = String(name.prefix(1))
-            
-            if tableSections.contains(char) { return }
-            
-            tableSections.append(char)
+    func createSectionsHandler(_ arr: [String]) -> Void {
+        for user in arr {
+            let char = user.prefix(1)
+            if tableSections.contains(String(char)) { continue }
+            tableSections.append(String(char))
         }
-        
         tableSections.sort(by: <)
     }
     
@@ -201,26 +185,15 @@ class UserFriendsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     }
     
     func filterContentForSearchText(_ searchText: String) {
-        filteredResults = getUsers().filter { (user: String) -> Bool in
+        filteredResults = mockFriends.filter { (user: String) -> Bool in
             return user.lowercased().contains(searchText.lowercased())
         }
-
+      
         tableView.reloadData()
     }
     
     func updateCharsHandler(arr: [String] = []) {
         characterPicker.Chars = arr
         characterPicker.setupUI()
-    }
-    
-    func getUsers() -> Array<String> {
-        var tempArr: [String] = [String]()
-        
-        friends.forEach {
-            let name = "\($0["name"]!)"
-            tempArr.append(name)
-        }
-        
-        return tempArr
     }
 }
