@@ -36,7 +36,7 @@ class UserFriendsVC: UIViewController, UITableViewDelegate, UITableViewDataSourc
     private let friends: Array<[String: Any]> = [
         ["name": "Dom", "images": ["Dom", "HAN", "Fast 3", "Fast 5"]],
         ["name": "Paul", "images": ["Paul", "HAN", "Fast 1", "Fast 2", "Fast 5", "Fast 4"]],
-        ["name": "HAN", "images": ["Han", "HAN", "Fast 3", "Fast 5", "Fast 4"]],
+        ["name": "HAN", "images": ["HAN", "Fast 3", "Fast 5", "Fast 4"]],
         ["name": "Tej", "images": ["Tej", "HAN", "Fast 3", "Fast 5", "Fast 1", "Fast 2"]],
         ["name": "Letti", "images": ["Letti", "HAN", "Fast 3", "Fast 5"]],
         ["name": "Ron", "images": ["Ron", "HAN", "Fast 3", "Fast 5"]],
