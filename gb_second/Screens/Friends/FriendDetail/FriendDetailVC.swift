@@ -7,35 +7,60 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
 
-class FriendDetailVC: UICollectionViewController {
+
+class FriendDetailVC: UIViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    var imageName: String?
+    var images: [String]?
+    private let countCells: Int = 3
+    private let offset: CGFloat = 2.0
+    private let reuseIdentifier: String = "Cell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        collectionView.register(UINib(nibName: "PhotoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
-
-    // MARK: UICollectionViewDataSource
-
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
-    }
+}
 
 
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Collection", for: indexPath) as? FriendDetailCollection else { return UICollectionViewCell()}
+extension FriendDetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let images = images else { return 1 }
     
-        cell.userImageDetail.image = UIImage(named: imageName!)
-        cell.userImageDetail.clipsToBounds = true
+        return images.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotoCollectionViewCell else { return UICollectionViewCell()}
+        
+        cell.imageView.image = UIImage(named: images![indexPath.row])
+        cell.imageView.clipsToBounds = true
         
         return cell
     }
-
+    
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let frameCV = collectionView.frame
+        let widthCell = frameCV.width / CGFloat(countCells)
+        let heightCell = widthCell
+        let spacing = CGFloat(CGFloat((countCells + 1)) * offset / CGFloat(countCells))
+        
+        return CGSize(width: widthCell - spacing, height: heightCell - (offset * 2))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "FullScreenPhotoVC") as! FullScreenPhotoVC
+        
+        vc.images = images
+        vc.indexPath = indexPath
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
