@@ -50,6 +50,7 @@
 		A5EBD84F25B631F800DE7E2C /* NewsCellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5EBD84D25B631F800DE7E2C /* NewsCellView.xib */; };
 		A5EBD85B25B6D3DA00DE7E2C /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EBD85A25B6D3DA00DE7E2C /* RoundedImageView.swift */; };
 		A5EBD86225B6E8D400DE7E2C /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EBD86125B6E8D400DE7E2C /* NewsCell.swift */; };
+		A5F7B04825D083A400709446 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7B04725D083A400709446 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		A5EBD84D25B631F800DE7E2C /* NewsCellView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsCellView.xib; sourceTree = "<group>"; };
 		A5EBD85A25B6D3DA00DE7E2C /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		A5EBD86125B6E8D400DE7E2C /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
+		A5F7B04725D083A400709446 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +280,8 @@
 		A55B25A82594A27400676326 /* gb_second */ = {
 			isa = PBXGroup;
 			children = (
+				A5F7B04625D0838400709446 /* Server */,
+				A5F7B04525D0837100709446 /* New Group */,
 				A52FD90925AF58E30052F9C6 /* Screens */,
 				A52FD90725AF588E0052F9C6 /* Core */,
 				A523CCA225AC970A00A81336 /* Models */,
@@ -411,6 +415,21 @@
 			path = gb_second/Screens/NewsCell;
 			sourceTree = SOURCE_ROOT;
 		};
+		A5F7B04525D0837100709446 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A5F7B04625D0838400709446 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				A5F7B04725D083A400709446 /* NetworkManager.swift */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -504,6 +523,7 @@
 				A5EBD85B25B6D3DA00DE7E2C /* RoundedImageView.swift in Sources */,
 				A591A34125B0AC1800E9C8C9 /* CustomTextField.swift in Sources */,
 				A5A6CCA125BAD62A00CFCA90 /* StackViewExtension.swift in Sources */,
+				A5F7B04825D083A400709446 /* NetworkManager.swift in Sources */,
 				A58CA165259B41F6006C5723 /* UserFriendsCell.swift in Sources */,
 				A591A34625B0C06900E9C8C9 /* Utilities.swift in Sources */,
 				A5EBD84E25B631F800DE7E2C /* NewsCellView.swift in Sources */,

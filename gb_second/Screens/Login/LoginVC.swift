@@ -49,7 +49,9 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        let result = checkUserCredentials()
+        let networkManager = NetworkManager.shared
+        let result = networkManager.login(email: loginTextfield.text!, password: passwordTextfield.text!)
+        
         
         if !result {
             showAlert()
@@ -72,10 +74,6 @@ class LoginVC: UIViewController, UIScrollViewDelegate {
     
     @objc func keyboardWillHide(notification: Notification) {
         scrollView.contentInset = UIEdgeInsets.zero
-    }
-    
-    func checkUserCredentials() -> Bool {
-        return loginTextfield.text! == "admin" && passwordTextfield.text == "123"
     }
     
     func showAlert() {
