@@ -51,6 +51,10 @@
 		A5EBD85B25B6D3DA00DE7E2C /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EBD85A25B6D3DA00DE7E2C /* RoundedImageView.swift */; };
 		A5EBD86225B6E8D400DE7E2C /* NewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5EBD86125B6E8D400DE7E2C /* NewsCell.swift */; };
 		A5F7B04825D083A400709446 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F7B04725D083A400709446 /* NetworkManager.swift */; };
+		A5F9345D25D530D70096BB37 /* VKLoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F9345C25D530D70096BB37 /* VKLoginVC.swift */; };
+		A5F9346025D569D40096BB37 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F9345F25D569D40096BB37 /* Session.swift */; };
+		A5F9346325D56CCD0096BB37 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F9346225D56CCD0096BB37 /* AppData.swift */; };
+		A5F9346825D571E20096BB37 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F9346725D571E20096BB37 /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +104,10 @@
 		A5EBD85A25B6D3DA00DE7E2C /* RoundedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 		A5EBD86125B6E8D400DE7E2C /* NewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCell.swift; sourceTree = "<group>"; };
 		A5F7B04725D083A400709446 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A5F9345C25D530D70096BB37 /* VKLoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKLoginVC.swift; sourceTree = "<group>"; };
+		A5F9345F25D569D40096BB37 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		A5F9346225D56CCD0096BB37 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		A5F9346725D571E20096BB37 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F9346825D571E20096BB37 /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +187,7 @@
 			children = (
 				A55B25AF2594A27400676326 /* Login.storyboard */,
 				A55B25AD2594A27400676326 /* LoginVC.swift */,
+				A5F9345C25D530D70096BB37 /* VKLoginVC.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -266,6 +276,7 @@
 			children = (
 				A55B25A82594A27400676326 /* gb_second */,
 				A55B25A72594A27400676326 /* Products */,
+				A5F9346625D571E20096BB37 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -281,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				A5F7B04625D0838400709446 /* Server */,
-				A5F7B04525D0837100709446 /* New Group */,
 				A52FD90925AF58E30052F9C6 /* Screens */,
 				A52FD90725AF588E0052F9C6 /* Core */,
 				A523CCA225AC970A00A81336 /* Models */,
@@ -415,19 +425,22 @@
 			path = gb_second/Screens/NewsCell;
 			sourceTree = SOURCE_ROOT;
 		};
-		A5F7B04525D0837100709446 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		A5F7B04625D0838400709446 /* Server */ = {
 			isa = PBXGroup;
 			children = (
 				A5F7B04725D083A400709446 /* NetworkManager.swift */,
+				A5F9345F25D569D40096BB37 /* Session.swift */,
+				A5F9346225D56CCD0096BB37 /* AppData.swift */,
 			);
 			path = Server;
+			sourceTree = "<group>";
+		};
+		A5F9346625D571E20096BB37 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5F9346725D571E20096BB37 /* WebKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +536,7 @@
 				A5EBD85B25B6D3DA00DE7E2C /* RoundedImageView.swift in Sources */,
 				A591A34125B0AC1800E9C8C9 /* CustomTextField.swift in Sources */,
 				A5A6CCA125BAD62A00CFCA90 /* StackViewExtension.swift in Sources */,
+				A5F9346025D569D40096BB37 /* Session.swift in Sources */,
 				A5F7B04825D083A400709446 /* NetworkManager.swift in Sources */,
 				A58CA165259B41F6006C5723 /* UserFriendsCell.swift in Sources */,
 				A591A34625B0C06900E9C8C9 /* Utilities.swift in Sources */,
@@ -536,9 +550,11 @@
 				A518F5BE25A52B7C00F38104 /* TableVCExtension.swift in Sources */,
 				A592F5E025A51D8F00723C68 /* UserGroupCell.swift in Sources */,
 				A591A33C25AF899B00E9C8C9 /* HEXColorExtension.swift in Sources */,
+				A5F9346325D56CCD0096BB37 /* AppData.swift in Sources */,
 				A598B49F25BA05980072E0EC /* FriendsCellView.swift in Sources */,
 				A55B25AC2594A27400676326 /* SceneDelegate.swift in Sources */,
 				A52122C425C709600052D869 /* FullScreenPhotoViewCell.swift in Sources */,
+				A5F9345D25D530D70096BB37 /* VKLoginVC.swift in Sources */,
 				A5EBD86225B6E8D400DE7E2C /* NewsCell.swift in Sources */,
 				A5087E1B259A7BFF005D391A /* GroupsGlobalSearchVC.swift in Sources */,
 			);

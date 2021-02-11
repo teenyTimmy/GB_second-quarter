@@ -84,7 +84,18 @@ class SplashScreenVC: UIViewController {
             self.imageView.alpha = 0
         }, completion: { end in
             if end {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {guard let viewController = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() else { return }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    guard let viewController = UIStoryboard(name: "Login", bundle: nil).instantiateInitialViewController() else { return }
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    print("++++++++")
+                    print("++++++++")
+                    print("++++++++")
+                    print("++++++++")
+                    print("++++++++")
+                    print("++++++++")
+                    print("++++++++")
+                    print(storyboard)
                     
                     viewController.modalTransitionStyle = .crossDissolve
                     viewController.modalPresentationStyle = .fullScreen
