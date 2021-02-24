@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mz5-qB-WJr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -109,8 +110,45 @@
             </objects>
             <point key="canvasLocation" x="682" y="137"/>
         </scene>
+        <!--LoginVC-->
+        <scene sceneID="qmY-WA-pp2">
+            <objects>
+                <viewController id="Mz5-qB-WJr" customClass="VKLoginVC" customModule="gb_second" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3sU-d3-MsQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" customUserAgent="" translatesAutoresizingMaskIntoConstraints="NO" id="VtD-3W-Trs">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="2H8-02-DZG"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2H8-02-DZG" firstAttribute="bottom" secondItem="VtD-3W-Trs" secondAttribute="bottom" id="G22-Rs-eYB"/>
+                            <constraint firstItem="VtD-3W-Trs" firstAttribute="leading" secondItem="2H8-02-DZG" secondAttribute="leading" id="Ot8-2L-Csb"/>
+                            <constraint firstItem="2H8-02-DZG" firstAttribute="trailing" secondItem="VtD-3W-Trs" secondAttribute="trailing" id="d0s-qm-zh0"/>
+                            <constraint firstItem="VtD-3W-Trs" firstAttribute="top" secondItem="2H8-02-DZG" secondAttribute="top" id="oOz-Qc-4B4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="VtD-3W-Trs" id="RlF-Ic-98U"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3jr-kX-D34" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1401" y="134"/>
+        </scene>
     </scenes>
     <resources>
         <image name="WhiteLogo" width="213" height="213"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
